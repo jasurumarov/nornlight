@@ -1,0 +1,301 @@
+@use '../abstracts' as *;
+
+.supHeader {
+    padding-top: 12px;
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        ul {
+            display: flex;
+            gap: 27px;
+
+            a {
+                font-family: Manrope600;
+                font-size: 14px;
+                color: $colorBlack;
+                opacity: 0.5;
+                transition: .2s;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+
+            a {
+                font-family: Manrope600;
+                font-size: 14px;
+                color: $colorBlack;
+            }
+
+            button {
+                font-family: Manrope600;
+                font-size: 14px;
+                color: $colorBlack;
+                opacity: 0.5;
+                transition: .2s;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 894px) {
+    .supHeader {
+        &__content {
+            ul {
+                gap: 16px;
+            }
+
+            div {
+                gap: 16px;
+            }
+        }
+    }
+}
+
+@media (max-width: 784px) {
+    .supHeader {
+        display: none;
+    }
+}
+
+
+
+.header {
+    padding: 24px 0;
+    background: white;
+    position: sticky;
+    top: 0;
+    transition: .2s;
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+
+        .header__logo-side {
+            padding-top: 4px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            button {
+                padding-bottom: 6px;
+                display: none;
+                flex-direction: column;
+                align-items: end;
+                gap: 5px;
+
+                span {
+                    height: 2px;
+                    background: $colorBlack;
+                }
+
+                span:first-child {
+                    width: 30px;
+                }
+
+                span:nth-child(2) {
+                    width: 25.5px;
+                }
+
+                span:last-child {
+                    width: 20px;
+                }
+            }
+        }
+
+        .header__category-btn {
+            background: $colorBlack;
+            border-radius: 100px;
+            width: 153px;
+            padding: 0 18px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            color: white;
+            font-family: Manrope600;
+            font-size: 16px;
+            transition: .2s;
+
+            svg {
+                font-size: 20px;
+            }
+
+            &:hover {
+                opacity: .95;
+            }
+
+            &:active {
+                scale: .98;
+            }
+        }
+
+        label {
+            max-width: 626px;
+            width: 100%;
+            position: relative;
+
+            input {
+                flex: 1;
+                width: 100%;
+                border: 1px solid #454545;
+                border-radius: 100px;
+                height: 50px;
+                padding-left: 24px;
+                padding-right: 60px;
+                font-family: Manrope600;
+                font-size: 16px;
+                color: $colorBlack;
+            }
+
+            svg {
+                position: absolute;
+                font-size: 19px;
+                top: 15px;
+                right: 20px;
+            }
+        }
+
+        .header__btns {
+            display: flex;
+            align-items: end;
+            gap: 30px;
+
+            button {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 6px;
+                position: relative;
+
+                span {
+                    font-family: Manrope600;
+                    color: $colorBlack;
+                    font-size: 12px;
+
+                }
+
+                sup {
+                    position: absolute;
+                    width: 18px;
+                    height: 18px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    top: -6px;
+                    right: 0px;
+                    background: #C63C3C;
+                    color: white;
+                    font-family: Manrope600;
+                    font-size: 12px;
+
+                }
+            }
+
+            button:first-child {
+                img {
+                    width: 21px;
+                    height: 21px;
+                }
+            }
+
+            button:nth-child(2) {
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            button:last-child {
+                img {
+                    width: 23px;
+                    height: 23px;
+                }
+            }
+        }
+    }
+}
+
+.header.shrink {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px -10px;
+}
+
+@media (max-width: 972px) {
+    .header {
+        nav {
+            .header__btns {
+                gap: 16px;
+            }
+        }
+    }
+}
+
+@media (max-width: 864px) {
+    .header {
+        nav {
+            .header__logo-side {
+                button {
+                    display: flex;
+                }
+            }
+
+            label {
+                display: none;
+            }
+
+            .header__category-btn {
+                display: none;
+            }
+
+            .header__btns {
+                button:nth-child(2) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 542px) {
+    .header {
+        nav {
+            .header__logo-side {
+                img {
+                    width: 168px;
+                }
+            }
+
+            .header__btns {
+                gap: 26px;
+
+                button {
+
+                    span {
+                        display: none;
+                    }
+
+                    sup {
+                        right: -8px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+@use '../abstracts' as *;
+
+.companies-section {
+    margin-bottom: 100px;
+
+    &__content {
+        h2 {
+            font-family: Manrope700;
+            font-size: 40px;
+            color: $colorBlack;
+            margin-bottom: 42px;
+        }
+
+        article {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            animation: .2s;
+
+            img {
+                animation: .2s;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 840px) {
+    .companies-section {
+        &__content {
+            article {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .companies-section {
+        &__content {
+            article {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+}
+
+@media (max-width: 564px) {
+    .companies-section {
+        &__content {
+            h2 {
+                font-size: 28px;
+                font-family: Manrope600;
+            }
+        }
+    }
+}

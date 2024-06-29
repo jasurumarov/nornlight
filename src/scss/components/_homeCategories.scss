@@ -1,0 +1,179 @@
+@use '../abstracts' as *;
+
+.homeCategory-section {
+    margin-top: 98px;
+    margin-bottom: 50px;
+
+    &__content {
+        .category__wrapper {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+
+            .category__wrapper-items {
+                max-width: 420px;
+                width: 100%;
+                height: 250px;
+                border-radius: 20px;
+                background: $colorWhite;
+                background-repeat: no-repeat;
+                background-position: right 16px center;
+                padding: 32px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                transition: .2s;
+                cursor: pointer;
+
+                h3 {
+                    max-width: 100px;
+                    font-family: Manrope600;
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 22px;
+                    color: $colorBlack;
+
+                }
+
+                a {
+                    font-family: Manrope500;
+                    font-size: 16px;
+                    color: $colorBlack;
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    transition: .2s;
+
+                    svg {
+                        font-size: 20px;
+                        padding-bottom: 2px;
+                    }
+                }
+
+                &:hover {
+                    a {
+                        gap: 11px;
+                        color: black;
+                    }
+                }
+            }
+
+            .category__wrapper-items:first-child {
+                background-position: right 22px center;
+            }
+
+            .category__wrapper-items:nth-child(2) {
+                background-position: right 44px center;
+            }
+
+            .category__wrapper-items:nth-child(3) {
+                background-position: right -40px center;
+            }
+
+            .category__wrapper-items:nth-child(5) {
+                background-position: right 10px bottom;
+            }
+        }
+    }
+}
+
+@media (max-width: 1094px) {
+    .homeCategory-section {
+        &__content {
+            .category__wrapper {
+                grid-template-columns: 1fr 1fr;
+
+                .category__wrapper-items {
+                    max-width: 1000px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 674px) {
+    .homeCategory-section {
+        &__content {
+            .category__wrapper {
+                .category__wrapper-items {
+                    background-size: 150px;
+                }
+
+                .category__wrapper-items:nth-child(2) {
+                    background-position: right 30px center;
+                }
+
+                .category__wrapper-items:nth-child(3) {
+                    background-size: 240px;
+                    background-position: right -32px center;
+                }
+
+                .category__wrapper-items:nth-child(4) {
+                    background-size: 160px 150px;
+                    background-position: right 0px center;
+                }
+
+                .category__wrapper-items:nth-child(5) {
+                    background-position: right 14px center;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 564px) {
+    .homeCategory-section {
+        &__content {
+            .category__title {
+                h2 {
+                    font-size: 28px;
+                    margin-top: 0;
+                }
+
+                button {
+                    display: none;
+                }
+            }
+
+            .category__btn {
+                display: flex;
+            }
+
+            .category__wrapper {
+                .category__wrapper-items {
+                    padding: 20px;
+                    background-size: 110px;
+                    background-position: center center !important;
+
+                    h3 {
+                        font-size: 18px;
+                    }
+
+                    a {
+                        font-size: 15px;
+
+                        svg {
+                            font-size: 18px;
+                            padding-bottom: 2px;
+                        }
+                    }
+                }
+
+                .category__wrapper-items:nth-child(3) {
+                    background-size: 170px;
+                    background-position: right -32px center;
+                }
+
+                .category__wrapper-items:nth-child(4) {
+                    background-size: 160px 130px;
+                    background-position: right 0px center;
+                }
+
+                .category__wrapper-items:nth-child(5) {
+                    background-position: right 14px center;
+                }
+            }
+        }
+    }
+}
