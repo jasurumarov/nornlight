@@ -6,7 +6,7 @@
     justify-content: space-between;
 
     h2 {
-        font-family: Manrope700;
+        font-family: Manrope500;
         font-size: 40px;
         color: $colorBlack;
         margin-top: -6px;
@@ -15,12 +15,12 @@
     button {
         width: 220px;
         height: 50px;
-        padding-left: 48px;
         border-radius: 100px;
         border: 1px solid #454545;
         display: flex;
+        justify-content: center !important;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
         font-family: Manrope500;
         font-size: 16px;
         transition: .2s;
@@ -34,13 +34,12 @@
         &:hover {
             background: $colorBlack;
             color: white;
-        }
 
-        &:active {
             svg {
-                margin-left: -6px;
+                margin-left: 4px;
             }
         }
+
     }
 }
 
@@ -53,12 +52,12 @@
     button {
         width: 220px;
         height: 50px;
-        padding-left: 48px;
         border-radius: 100px;
         border: 1px solid #454545;
         display: flex;
         align-items: center;
-        gap: 10px;
+        justify-content: center;
+        gap: 8px;
         font-family: Manrope500;
         font-size: 16px;
         transition: .2s;
@@ -72,13 +71,12 @@
         &:hover {
             background: $colorBlack;
             color: white;
-        }
 
-        &:active {
             svg {
-                margin-left: -6px;
+                margin-left: 4px;
             }
         }
+
     }
 }
 

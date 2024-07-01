@@ -1,0 +1,16 @@
+.allProducts-page {
+    .pageLink {
+        margin-top: 24px;
+        margin-bottom: -48px;
+    }
+    .products-section {
+        .section__title-btn {
+            display: none !important;
+        }
+    }
+    .section__title {
+        button {
+            display: none !important;
+        }
+    }
+}

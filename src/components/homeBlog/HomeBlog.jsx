@@ -1,11 +1,18 @@
 import React from 'react'
 import SectionTitles from '../sectionTitles/SectionTitles'
 
+// Swiper
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 // Images
 import BlogImg1 from '../../assets/images/blog1.png'
 import BlogImg2 from '../../assets/images/blog2.png'
 import BlogImg3 from '../../assets/images/blog3.png'
-import { GoArrowUpRight } from 'react-icons/go'
+import { GoArrowRight, GoArrowUpRight } from 'react-icons/go'
+import { useNavigate } from 'react-router-dom';
 
 const blogData = [
     {
@@ -35,15 +42,17 @@ const blogData = [
 ]
 
 const HomeBlog = () => {
+    const navigate = useNavigate()
+
     let card = blogData.map(card => (
-        <div key={card.id} className="homeBlog__card">
+        <SwiperSlide key={card.id} className="homeBlog__card">
             <img src={card.img} alt="card img" />
             <div>
                 <h3>Как правильно освещать дом снаружи?</h3>
                 <GoArrowUpRight />
             </div>
             <p>01.01.2024</p>
-        </div>
+        </SwiperSlide>
     ))
     return (
         <section className='homeBlog-section'>
@@ -51,6 +60,25 @@ const HomeBlog = () => {
                 <SectionTitles navigate={'/blog'} btnName={'Перейти в блог'} title={'Блог'} />
                 <div className="homeBlog-section__content">
                     {card}
+                </div>
+                <Swiper
+                    loop={true}
+                    slidesPerView={1}
+                    spaceBetween={20}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    breakpoints={{
+                        460: {
+                            slidesPerView: 2, 
+                        }
+                    }}
+                    modules={[Pagination]}
+                    className="homeBlog-section__content--swiper">
+                    {card}
+                </Swiper>
+                <div className="section__title-btn">
+                    <button onClick={() => navigate('/blog')}>Перейти в блог <GoArrowRight /></button>
                 </div>
             </div>
         </section>

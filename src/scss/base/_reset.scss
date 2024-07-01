@@ -25,3 +25,39 @@ a {
 ul {
   list-style-type: none;
 }
+
+.two-line {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.one-line {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.pageLink {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  a {
+    color: #454545;
+    opacity: 0.3;
+    transition: .2s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  a:last-child {
+    opacity: 1;
+  }
+  span {
+    font-size: 17px;
+  }
+}

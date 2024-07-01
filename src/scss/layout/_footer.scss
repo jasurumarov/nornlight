@@ -1,1 +1,102 @@
 @use '../abstracts' as *;
+
+footer {
+    background: #F8F8F8;
+    padding: 79px 0;
+
+    .footer__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 32px;
+
+        div {
+            .footer__title-logo {
+                margin-bottom: 30px;
+            }
+
+            .footer__title-phone {
+                font-family: Manrope600;
+                font-size: 24px;
+                color: $colorBlack;
+            }
+
+            .footer__title-bank {
+                margin: 25px 0;
+            }
+
+            p {
+                margin-bottom: 20px;
+                font-family: Manrope600;
+                font-size: 16px;
+                color: $colorBlack;
+                opacity: .5;
+                transition: .1s;
+                user-select: none;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+            div {
+                margin-top: 5px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+
+                svg {
+                    font-size: 34px;
+                }
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 27px;
+
+            h3 {
+                margin-bottom: 5px;
+                font-family: Manrope600;
+                font-size: 23px;
+                color: $colorBlack;
+            }
+
+            a {
+                font-family: Manrope600;
+                font-size: 16px;
+                color: $colorBlack;
+                opacity: .5;
+                transform: .2s;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 438px) {
+    footer {
+        .footer__content {
+            flex-direction: column;
+            gap: 36px;
+            div {
+                .footer__title-logo {
+                    width: 200px;
+                }
+                .footer__title-phone {
+                    font-size: 18px;
+                }
+            }
+            ul {
+                gap: 20px;
+                h3 {
+                    margin-bottom: 4px;
+                }
+            }
+        }
+    }
+}
