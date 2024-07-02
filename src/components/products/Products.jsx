@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 
 // Components
 import SectionTitles from '../sectionTitles/SectionTitles'
@@ -7,16 +8,28 @@ import ProductsLoading from '../productsLoading/ProductsLoading'
 
 // Icons
 import { GoArrowRight } from 'react-icons/go'
-import { FaRegHeart } from 'react-icons/fa'
+import { FaHeart, FaRegHeart } from 'react-icons/fa'
+import { toggleHeart } from '../../context/slices/wishlistSlice'
 
 const Products = ({ data, isLoading }) => {
+    const dispatch = useDispatch()
     const navigate = useNavigate()
+
+    let favorites = useSelector(state => state.wishlist.value)
 
     let cardItems = data?.map(product => (
         <div key={product.id} className="products__card">
             <div className='products__card-img'>
                 <img src={product.url[0]} alt={product.title} />
-                <FaRegHeart />
+                <button onClick={() => dispatch(toggleHeart(product))}>
+                    {
+                        favorites?.some(item => item.id === product.id)
+                            ?
+                            <FaHeart style={{ color: "#454545" }} />
+                            :
+                            <FaRegHeart />
+                    }
+                </button>
             </div>
             <Link to={`/products/${product.id}`}>
                 <h3 className={'two-line'}>{product.title}</h3>

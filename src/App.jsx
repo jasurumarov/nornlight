@@ -4,14 +4,20 @@ import './scss/style.scss'
 // Pages
 import Home from "./pages/home/Home"
 import AllProducts from "./pages/allProducts/AllProducts"
+import Favorites from "./pages/favorites/Favorites"
+import DetailProductPage from "./pages/detailProductPage/DetailProductPage"
+import Blog from "./pages/blog/Blog"
+import Garant from "./pages/garant/Garant"
+import Return from "./pages/return/Return"
+import Shipping from "./pages/shipping/Shipping"
+import Contact from "./pages/contact/Contact"
 
 // Components
 import SupHeader from "./components/supHeader/SupHeader"
 import Header from "./components/header/Header"
 import SearchInput from "./components/searchInput/SearchInput"
 import Footer from "./components/footer/Footer"
-import DetailProductPage from "./pages/detailProductPage/DetailProductPage"
-import { useEffect } from "react"
+import NotFound from "./components/notFound/NotFound"
 
 function App() {
   return (
@@ -24,6 +30,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<AllProducts />} />
         <Route path="/products/:id" element={<DetailProductPage />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/garant" element={<Garant />} />
+        <Route path="/return" element={<Return />} />
+        <Route path="/shipping" element={<Shipping />} />
+        <Route path="/contact" element={<Contact />} />
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />

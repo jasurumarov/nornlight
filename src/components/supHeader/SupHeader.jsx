@@ -14,16 +14,21 @@ const linksData = [
     },
     {
         id: 3,
+        link: 'return',
+        title: 'Возврат'
+    },
+    {
+        id: 4,
         link: 'garant',
         title: 'Гарантии'
     },
     {
-        id: 4,
+        id: 5,
         link: 'contact',
         title: 'Контакты'
     },
     {
-        id: 5,
+        id: 6,
         link: 'blog',
         title: 'Блог'
     },

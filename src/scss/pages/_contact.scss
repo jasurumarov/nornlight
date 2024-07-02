@@ -1,0 +1,188 @@
+.contact-page {
+    .contact-section {
+        margin-top: 12px;
+        margin-bottom: 104px;
+
+        &__content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 24px;
+
+            h1 {
+                font-family: Manrope600;
+                font-size: 48px;
+                line-height: 58.4px;
+                color: #454545;
+            }
+
+            div {
+                max-width: 650px;
+
+                a {
+                    font-family: Manrope500;
+                    color: #454545;
+                    font-size: 24px;
+                    margin-bottom: 14px;
+                }
+
+                p {
+                    margin-top: 10px;
+                    font-family: Manrope;
+                    font-size: 16px;
+                    line-height: 28px;
+                    max-width: 250px;
+                    margin-bottom: 10px;
+                    color: #454545;
+                }
+
+                ul {
+                    margin-left: 20px;
+                    list-style-type: disc;
+                    margin-bottom: 56px;
+
+                    li {
+                        font-size: 18px;
+                        letter-spacing: -0.01em;
+                        line-height: 28px;
+                        color: #2F4DA3;
+                    }
+
+                }
+            }
+        }
+
+        .hero-container {
+            position: relative;
+        }
+
+        &__map {
+            margin-top: 48px;
+            border: 0;
+            border-radius: 15px;
+            width: 100%;
+            height: 672px;
+        }
+
+        &__map-content {
+            max-width: 1304px;
+            width: 100%;
+            position: absolute;
+            bottom: 32px;
+            border-radius: 15px;
+            padding: 58px 62px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+
+            div {
+                h3 {
+                    margin-bottom: 10px;
+                    font-family: Manrope;
+                    font-size: 22px;
+                    color: #454545;
+                }
+
+                p {
+                    color: #454545;
+                }
+            }
+
+            button {
+                width: 216px;
+                height: 50px;
+                border-radius: 100px;
+                background: #454545;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: Manrope500;
+                font-size: 16px;
+                transition: .2s;
+
+                &:hover {
+                    opacity: .94;
+                }
+
+                &:active {
+                    scale: .97;
+                }
+
+            }
+        }
+    }
+}
+
+@media (max-width: 1372px) {
+    .contact-page {
+        .contact-section {
+            &__map-content {
+                max-width: 1000px;
+                // left: 32px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1072px) {
+    .contact-page {
+        .contact-section {
+            &__map-content {
+                position: static;
+                flex-direction: column;
+                align-items: start;
+                gap: 48px;
+                margin-bottom: -40px;
+                max-width: none;
+                width: auto;
+                padding: 40px 24px;
+            }
+        }
+    }
+}
+@media (max-width: 904px) {
+    .contact-page {
+        .contact-section {
+            &__content {
+                div {
+                    margin-top: 0px !important;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 526px) {
+    .contact-page {
+        .contact-section {
+            &__content {
+                flex-direction: column;
+
+                h1 {
+                    font-size: 28px;
+                    line-height: 38px;
+                    margin-bottom: 12px;
+
+                    br {
+                        display: none;
+                    }
+                }
+
+                div {
+                    margin-top: -14px !important;
+
+                    h3 {
+                        font-size: 20px;
+                        margin-bottom: 12px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

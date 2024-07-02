@@ -177,7 +177,11 @@
             display: flex;
             align-items: end;
             gap: 30px;
-
+            button:first-child {
+                sup {
+                    right: 8px;
+                }
+            }
             button {
                 display: flex;
                 align-items: center;
@@ -200,12 +204,14 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    top: -6px;
+                    top: -8px;
                     right: 0px;
                     background: #C63C3C;
                     color: white;
                     font-family: Manrope600;
                     font-size: 12px;
+                    padding-bottom: 1px;
+                    padding-right: 0.3px;
 
                 }
             }

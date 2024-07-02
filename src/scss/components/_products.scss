@@ -28,11 +28,14 @@
                     object-fit: contain;
                 }
 
-                svg {
+                button {
                     position: absolute;
-                    font-size: 24px;
-                    color: #454545;
                     right: 0px;
+
+                    svg {
+                        font-size: 24px;
+                        color: #454545;
+                    }
                 }
             }
 

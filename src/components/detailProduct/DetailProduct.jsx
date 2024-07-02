@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useGetProductByIdQuery } from '../../context/api/productsApi'
+import { useDispatch, useSelector } from 'react-redux'
 
 // Components
 import PageLink from '../pageLink/PageLink'
@@ -9,11 +10,17 @@ import DetailProductLoading from './DetailProductLoading'
 // Icons
 import { FaFacebook, FaInstagramSquare, FaLinkedin, FaRegHeart, FaTelegram } from 'react-icons/fa'
 import { SlHeart } from 'react-icons/sl'
+import { toggleHeart } from '../../context/slices/wishlistSlice'
+import { LiaHeart, LiaHeartSolid } from 'react-icons/lia'
 
 const DetailProduct = () => {
+    const dispatch = useDispatch()
+
     const { id } = useParams()
-    const { data, isLoading } = useGetProductByIdQuery(id)
     const [mainImage, setMainImage] = useState('')
+
+    const { data, isLoading } = useGetProductByIdQuery(id)
+    let favorites = useSelector(state => state.wishlist.value)
 
     useEffect(() => {
         if (data && data.url) {
@@ -76,7 +83,15 @@ const DetailProduct = () => {
                         <button>+</button>
                     </div>
                     <button className='detail__product-title__btns-cart'>корзину</button>
-                    <button className='detail__product-title__btns-heart'><SlHeart /></button>
+                    <button onClick={() => dispatch(toggleHeart(data))} className='detail__product-title__btns-heart'>
+                        {
+                            favorites?.some(item => item.id === data?.id)
+                                ?
+                                <LiaHeartSolid style={{ color: "#454545" }} />
+                                :
+                                <LiaHeart />
+                        }
+                    </button>
                 </div>
             </div>
         </div>

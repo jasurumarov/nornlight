@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 // Icons
 import Logo from '../../assets/icons/logo.svg'
@@ -11,7 +12,10 @@ import { FiSearch } from 'react-icons/fi'
 
 
 const Header = () => {
+    const navigate = useNavigate()
+
     const [shrink, setShrink] = useState(false)
+    let favorites = useSelector(state => state.wishlist.value)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -48,9 +52,10 @@ const Header = () => {
                         <FiSearch />
                     </label>
                     <div className='header__btns'>
-                        <button>
+                        <button onClick={() => navigate('/favorites')}>
                             <img src={Heart} alt="heart icon" />
                             <span>Избранное</span>
+                            <sup>{favorites.length}</sup>
                         </button>
                         <button>
                             <img src={Cart} alt="compare icon" />

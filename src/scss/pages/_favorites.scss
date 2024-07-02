@@ -1,0 +1,66 @@
+.favorites-page {
+    margin-top: 48px;
+    .favorites__title {
+        position: relative;
+        display: inline-block;
+        h1 {
+            position: relative;
+            font-family: Manrope500;
+            font-size: 48px;
+            color: #454545;
+        }
+        sup {
+            position: absolute;
+            z-index: 5;
+            width: 18px;
+            height: 18px;
+            background: #C63C3C;
+            border-radius: 50%;
+            color: white;
+            top: 6px;
+            right: -16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            font-size: 12px;
+            font-family: Manrope600;
+            padding-bottom: 0.2spx;
+        }
+    }
+
+    .products-section {
+        padding-top: 0;
+        padding-bottom: 100px;
+        .section__title {
+            display: none;
+        }
+        .section__title-btn {
+            display: none;
+        }
+    }
+
+}
+
+@media (max-width: 682px) {
+    .favorites-page {
+        .favorites__title {
+            h1 {
+                font-size: 36px;
+            }
+        }
+    }   
+}
+@media (max-width: 444px) {
+    .favorites-page {
+        margin-top: 32px;
+        .favorites__title {
+            h1 {
+                font-size: 30px;
+            }
+        }
+        .products-section {
+            margin-top: -10px;
+        }
+    }   
+}
