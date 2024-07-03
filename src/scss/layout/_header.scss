@@ -19,9 +19,9 @@
                 opacity: 0.5;
                 transition: .2s;
 
-                &:hover {
-                    opacity: 1;
-                }
+            }
+            a.active {
+                opacity: 1;
             }
         }
 

@@ -1,1 +1,37 @@
 @use "../abstracts" as *;
+
+.home-page {
+    .homeCategory-section {
+        &__content {
+            .category__wrapper {
+
+                .category__wrapper-items:nth-child(7),
+                .category__wrapper-items:nth-child(8),
+                .category__wrapper-items:nth-child(9),
+                .category__wrapper-items:nth-child(10) {
+                    display: none;
+                }
+            }
+
+            .category__wrapper-lasts {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 824px) {
+    .empty {
+        height: 100vh;
+        img {
+            width: 100%;
+            margin-right: 0 !important;
+        }
+        h3 {
+            margin-top: -8px !important;
+        }
+        button {
+            margin-top: 10px !important;
+        }
+    }
+}

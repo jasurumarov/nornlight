@@ -8,6 +8,11 @@ import CatalogImg3 from '../../assets/images/catalog3.png'
 import CatalogImg4 from '../../assets/images/catalog4.png'
 import CatalogImg5 from '../../assets/images/catalog5.png'
 import CatalogImg6 from '../../assets/images/catalog6.png'
+import CatalogImg7 from '../../assets/images/category7.png'
+import CatalogImg8 from '../../assets/images/category8.png'
+import CatalogImg9 from '../../assets/images/category9.png'
+import CatalogImg10 from '../../assets/images/category10.png'
+import CatalogImg11 from '../../assets/images/category11.png'
 
 // Icons
 import { GoArrowRight } from 'react-icons/go'
@@ -44,6 +49,26 @@ const catalogData = [
         name: 'Споты',
         img: CatalogImg6
     },
+    {
+        id: 7,
+        name: 'Трековые светильники',
+        img: CatalogImg7
+    },
+    {
+        id: 8,
+        name: 'Уличные светильники',
+        img: CatalogImg8
+    },
+    {
+        id: 9,
+        name: 'Технические светильники',
+        img: CatalogImg9
+    },
+    {
+        id: 10,
+        name: 'Светодиодные ленты',
+        img: CatalogImg10
+    },
 ]
 
 const HomeCategory = () => {
@@ -62,6 +87,16 @@ const HomeCategory = () => {
                     <SectionTitles title={'Каталог'} btnName={'Весь каталог'} navigate={'/catalog'} />
                     <div className="category__wrapper">
                         {CatalogItems}
+                    </div>
+                    <div className="category__wrapper-lasts">
+                        <div style={{ backgroundImage: `url(${CatalogImg10})` }} className="category__wrapper-items">
+                            <h3>Светодиодные ленты</h3>
+                            <Link to={'/catalog'}>От 540₽ <GoArrowRight /></Link>
+                        </div>
+                        <div style={{ backgroundImage: `url(${CatalogImg11})` }} className="category__wrapper-items">
+                            <h3>Комплектуюшие</h3>
+                            <Link to={'/catalog'}>От 540₽ <GoArrowRight /></Link>
+                        </div>
                     </div>
                     <div className="section__title-btn">
                         <button onClick={() => navigate('/catalog')}>Весь каталог <GoArrowRight /></button>

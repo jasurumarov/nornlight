@@ -11,6 +11,7 @@ import Garant from "./pages/garant/Garant"
 import Return from "./pages/return/Return"
 import Shipping from "./pages/shipping/Shipping"
 import Contact from "./pages/contact/Contact"
+import About from "./pages/about/About"
 
 // Components
 import SupHeader from "./components/supHeader/SupHeader"
@@ -18,6 +19,8 @@ import Header from "./components/header/Header"
 import SearchInput from "./components/searchInput/SearchInput"
 import Footer from "./components/footer/Footer"
 import NotFound from "./components/notFound/NotFound"
+import Catalog from "./pages/catalog/Catalog"
+import Cart from "./pages/cart/Cart"
 
 function App() {
   return (
@@ -36,6 +39,9 @@ function App() {
         <Route path="/return" element={<Return />} />
         <Route path="/shipping" element={<Shipping />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/about-us" element={<About />} />
+        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/cart" element={<Cart />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>

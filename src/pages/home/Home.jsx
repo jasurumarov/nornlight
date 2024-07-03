@@ -13,7 +13,7 @@ import Products from '../../components/products/Products'
 const Home = () => {
     const { data, isLoading } = useGetProductsQuery()
     return (
-        <main>
+        <main className='home-page'>
             <Hero />
             <HomeCategory />
             <HomeAboutus />

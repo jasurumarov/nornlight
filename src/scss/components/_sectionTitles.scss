@@ -10,6 +10,7 @@
         font-size: 40px;
         color: $colorBlack;
         margin-top: -6px;
+        user-select: none;
     }
 
     button {
@@ -78,6 +79,18 @@
         }
 
     }
+}
+
+@media (max-width: 902px) {
+    .section__title {
+        h2 {
+            font-size: 36px !important;
+            font-family: Manrope600;
+            margin-top: 0;
+        }
+
+    }
+
 }
 
 @media (max-width: 564px) {

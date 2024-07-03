@@ -16,6 +16,7 @@ const Header = () => {
 
     const [shrink, setShrink] = useState(false)
     let favorites = useSelector(state => state.wishlist.value)
+    let cart = useSelector(state => state.cart.value)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -61,10 +62,10 @@ const Header = () => {
                             <img src={Cart} alt="compare icon" />
                             <span>Сравнение</span>
                         </button>
-                        <button>
+                        <button onClick={() => navigate('/cart')}>
                             <img src={Compare} alt="cart icon" />
                             <span>Корзина</span>
-                            <sup>1</sup>
+                            <sup>{cart.length}</sup>
                         </button>
                     </div>
                 </nav>

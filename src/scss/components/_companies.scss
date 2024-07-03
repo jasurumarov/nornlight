@@ -14,12 +14,21 @@
         article {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            animation: .2s;
 
             img {
-                animation: .2s;
-                width: 100%;
+                width: 100% !important;
+            }
+        }
+
+    }
+}
+
+@media (max-width: 902px) {
+    .companies-section {
+        &__content {
+            h2 {
+                font-size: 36px;
+                font-family: Manrope600;
             }
         }
     }

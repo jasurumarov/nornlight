@@ -1,0 +1,117 @@
+.about-page {
+    .about-section {
+        margin-top: 16px;
+        margin-bottom: 80px;
+
+        &__content {
+            display: grid;
+            gap: 102px;
+            grid-template-columns: repeat(2, 1fr);
+
+            .about__statics {
+                h1 {
+                    font-family: Manrope600;
+                    font-size: 48px;
+                    line-height: 58.4px;
+                    color: #454545;
+                    margin-bottom: 36px;
+                }
+
+                div {
+                    padding: 32px;
+                    height: 253px;
+                    border-radius: 15px;
+                    background: #F2F2F2;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    margin-bottom: 20px;
+                    transition: .2s;
+
+                    h3 {
+                        font-family: Manrope600;
+                        font-size: 48px;
+                        color: #454545;
+                    }
+
+                    p {
+                        font-family: Manrope500;
+                        font-size: 20px;
+                        color: #454545;
+                    }
+                }
+            }
+
+            .about__desc {
+                margin-top: 12px;
+                max-width: 640px;
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+
+                p {
+                    font-family: Manrope500;
+                    font-size: 17px;
+                    line-height: 30px;
+                    text-align: left;
+                    color: #454545;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1214px) {
+    .about-page {
+        .about-section {
+            &__content {
+                gap: 32px;
+                // grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+}
+
+@media (max-width: 746px) {
+    .about-page {
+        .about-section {
+            &__content {
+                grid-template-columns: repeat(1, 1fr);
+
+                .about__desc {
+                    max-width: 1000px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 672px) {
+    .about-page {
+        .about-section {
+            margin-top: 10px;
+            &__content {
+                .about__statics {
+                    h1 {
+                        font-size: 28px;
+                        margin-bottom: 18px;
+                    }
+                    div {
+                        height: 160px;
+                        h3 {
+                            font-size: 28px;
+                        }
+                        p {
+                            font-size: 16px;
+                        }
+                    }
+                }
+                .about__desc {
+                    p {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

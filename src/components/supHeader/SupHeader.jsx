@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const linksData = [
     {
@@ -36,7 +36,7 @@ const linksData = [
 
 const SupHeader = () => {
     let linkItem = linksData.map(link => (
-        <Link key={link.id} to={link.link}>{link.title}</Link>
+        <NavLink key={link.id} to={link.link}>{link.title}</NavLink>
     ))
     return (
         <nav className='supHeader'>

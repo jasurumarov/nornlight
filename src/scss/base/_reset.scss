@@ -26,6 +26,12 @@ ul {
   list-style-type: none;
 }
 
+.three-line {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
 .two-line {
   display: -webkit-box;
   -webkit-box-orient: vertical;
