@@ -2,6 +2,11 @@
     .empty {
         margin-top: 48px;
     }
+    @media (max-width: 824px) {
+        .empty {
+            margin-top: 66px;
+        }
+    }
 }
 
 .cart-section {

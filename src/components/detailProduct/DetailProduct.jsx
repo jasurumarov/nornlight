@@ -9,7 +9,6 @@ import DetailProductLoading from './DetailProductLoading'
 
 // Icons
 import { FaFacebook, FaInstagramSquare, FaLinkedin, FaRegHeart, FaTelegram } from 'react-icons/fa'
-import { SlHeart } from 'react-icons/sl'
 import { toggleHeart } from '../../context/slices/wishlistSlice'
 import { LiaHeart, LiaHeartSolid } from 'react-icons/lia'
 
@@ -27,10 +26,6 @@ const DetailProduct = () => {
             setMainImage(data.url[0])
         }
     }, [data])
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
 
     let productItem = (
         <div className='detail__product'>

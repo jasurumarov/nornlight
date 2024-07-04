@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PageLink from '../../components/pageLink/PageLink'
 import { Link } from 'react-router-dom'
 
 const Contact = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <main className='contact-page'>
             <div className="container">

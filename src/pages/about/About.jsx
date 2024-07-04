@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PageLink from '../../components/pageLink/PageLink'
 import Companies from '../../components/companies/Companies'
 import HomeBlog from '../../components/homeBlog/HomeBlog'
 
 const About = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <main className='about-page'>
             <div className="container">

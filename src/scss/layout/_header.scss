@@ -65,7 +65,7 @@
     }
 }
 
-@media (max-width: 784px) {
+@media (max-width: 864px) {
     .supHeader {
         display: none;
     }
@@ -186,6 +186,7 @@
                 display: flex;
                 align-items: center;
                 flex-direction: column;
+                right: 6px;
                 gap: 6px;
                 position: relative;
 
@@ -297,9 +298,17 @@
                     span {
                         display: none;
                     }
-
+                }
+                button:first-child {
                     sup {
-                        right: -8px;
+                        top: -8px;
+                        right: -10px;
+                    }
+                }
+                button:last-child {
+                    sup {
+                        top: -6px;
+                        right: -10px;
                     }
                 }
             }

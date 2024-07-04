@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PageLink from '../../components/pageLink/PageLink'
 
 const Return = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <main className='return-page'>
             <div className="container">

@@ -3,6 +3,134 @@
 .products-section {
     padding: 72px 0;
 
+    .products-section__categories {
+        margin-top: 24px;
+
+        .products-section__categories-item {
+            height: 44px;
+            border-radius: 100px;
+            background: #F8F8F8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Manrope500;
+            font-size: 16px;
+            color: #454545;
+            text-transform: capitalize;
+            cursor: pointer;
+            transition: .2s;
+            user-select: none;
+
+            &:active {
+                scale: .96;
+            }
+        }
+
+
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: #454545;
+        }
+
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            font-size: 24px !important;
+            font-weight: 900;
+        }
+    }
+
+    .products-section__categories__loading {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: 24px;
+
+
+        .products-section__categories-item__loading {
+            display: none;
+            height: 44px;
+            border-radius: 100px;
+            background: #F8F8F8;
+            transition: .2s;
+        }
+
+        .products-section__categories-item__loading:first-child,
+        .products-section__categories-item__loading:nth-child(2) {
+            display: block;
+        }
+
+
+        @media (min-width: 564px) {
+            grid-template-columns: repeat(3, 1fr);
+
+            .products-section__categories-item__loading:first-child,
+            .products-section__categories-item__loading:nth-child(2),
+            .products-section__categories-item__loading:nth-child(3) {
+                display: block;
+            }
+        }
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(4, 1fr);
+
+            .products-section__categories-item__loading:first-child,
+            .products-section__categories-item__loading:nth-child(2),
+            .products-section__categories-item__loading:nth-child(3),
+            .products-section__categories-item__loading:nth-child(4) {
+                display: block;
+            }
+        }
+
+        @media (min-width: 894px) {
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+
+            .products-section__categories-item__loading:first-child,
+            .products-section__categories-item__loading:nth-child(2),
+            .products-section__categories-item__loading:nth-child(3),
+            .products-section__categories-item__loading:nth-child(4),
+            .products-section__categories-item__loading:nth-child(5) {
+                display: block;
+            }
+        }
+
+        @media (min-width: 1036px) {
+            grid-template-columns: repeat(6, 1fr);
+
+            .products-section__categories-item__loading:first-child,
+            .products-section__categories-item__loading:nth-child(2),
+            .products-section__categories-item__loading:nth-child(3),
+            .products-section__categories-item__loading:nth-child(4),
+            .products-section__categories-item__loading:nth-child(5),
+            .products-section__categories-item__loading:last-child {
+                display: block;
+            }
+        }
+    }
+
+    .products__see-more {
+        margin-top: 48px;
+        display: flex;
+        justify-content: center;
+
+        button {
+            height: 44px;
+            border-radius: 100px;
+            background: #454545;
+            width: 140px;
+            color: white;
+            font-family: Manrope500;
+            font-size: 15px;
+            transition: .2s;
+
+            &:hover {
+                opacity: .93;
+            }
+
+        }
+    }
+
     &__content {
         margin-top: 42px;
         display: grid;
@@ -133,6 +261,9 @@
 
 @media (max-width: 524px) {
     .products-section {
+        .products__see-more {
+            margin-top: 24px;
+        }
         &__content {
             grid-template-columns: repeat(2, 1fr);
 

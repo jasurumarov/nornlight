@@ -20,18 +20,36 @@
     }
 }
 
+.empty {
+    h3 {
+        font-size: 28px !important;
+    }
+}
+
 @media (max-width: 824px) {
     .empty {
-        height: 100vh;
+        margin-top: 66px;
+
         img {
             width: 100%;
             margin-right: 0 !important;
         }
+
         h3 {
             margin-top: -8px !important;
         }
+
         button {
             margin-top: 10px !important;
         }
+    }
+}
+
+@media (max-width: 480px) {
+    .empty {
+        h3 {
+            font-size: 26px !important;
+        }
+
     }
 }

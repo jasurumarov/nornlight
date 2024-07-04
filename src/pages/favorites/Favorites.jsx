@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Products from '../../components/products/Products'
 import { useSelector } from 'react-redux'
 import Empty from '../../components/empty/Empty'
 
 const Favorites = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     let favorites = useSelector(state => state.wishlist.value)
-    console.log('ss');
     return (
         <main className='favorites-page'>
             {
@@ -21,7 +24,7 @@ const Favorites = () => {
                         <Products data={favorites} />
                     </>
                     :
-                    <Empty title={'wishlist'}/>
+                    <Empty title={'wishlist'} />
             }
 
         </main>

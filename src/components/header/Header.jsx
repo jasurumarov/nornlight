@@ -15,6 +15,7 @@ const Header = () => {
     const navigate = useNavigate()
 
     const [shrink, setShrink] = useState(false)
+    
     let favorites = useSelector(state => state.wishlist.value)
     let cart = useSelector(state => state.cart.value)
 
