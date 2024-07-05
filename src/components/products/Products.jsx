@@ -21,12 +21,14 @@ import { FaHeart, FaRegHeart, FaRegTrashAlt } from 'react-icons/fa'
 import { BsCart, BsCartCheck } from 'react-icons/bs'
 import Model from '../model/Model'
 import { RiEdit2Line } from 'react-icons/ri'
+import { useDeleteProductMutation } from '../../context/api/productsApi'
 
 const Products = ({ data, isLoading, isAdmin }) => {
     const [valueOfCategory, setValueOfCategory] = useState('all')
     const [visibleProducts, setVisibleProducts] = useState(8);
     const [model, setModel] = useState(false)
     const [modelData, setModelData] = useState(null)
+    // const [deleteProduct, { isLoading }] = useDeleteProductMutation()
 
     document.body.style.overflow = model ? 'hidden' : 'auto'
 
