@@ -74,7 +74,7 @@ const Products = ({ data, isLoading, isAdmin }) => {
                         ?
                         <div className='admin-btns'>
                             <button><RiEdit2Line /></button>
-                            <button><FaRegTrashAlt /></button>
+                            <button ><FaRegTrashAlt /></button>
                         </div>
                         :
                         <button onClick={() => dispatch(addToCart(product))}>

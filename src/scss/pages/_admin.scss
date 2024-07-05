@@ -149,10 +149,19 @@ h3 {
             button {
                 width: 55px !important;
                 height: 33px !important;
+                font-size: 19px;
             }
 
             button:first-child {
                 background: white;
+                font-size: 22px;
+                border: 1px solid #454545;
+                svg {
+                    color: #454545;
+                }
+            }
+            button:last-child {
+                color: white;
             }
         }
     }

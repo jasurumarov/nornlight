@@ -41,7 +41,7 @@ const Footer = () => {
                     <ul>
                         <h3>Покупателям</h3>
                         <Link to={'/aboutus'}>O компании</Link>
-                        <Link to={'/services'}>services</Link>
+                        <Link to={'/shipping'}>Доставка и оплата</Link>
                         <Link to={'/return'}>Возврат</Link>
                         <Link to={'/garant'}>Гарантии</Link>
                         <Link to={'/contact'}>Контакты</Link>
