@@ -1,0 +1,57 @@
+.admin {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    transition: .3s;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        padding: 22px 32px;
+        justify-content: space-between;
+
+        div {
+
+            p,
+            svg {
+                color: #454545;
+                font-family: Manrope600;
+            }
+        }
+    }
+}
+
+.admin.close {
+    grid-template-columns: 74px 1fr;
+
+    .sidebar__logo,
+    .sidebar__link {
+        padding-left: 10px;
+        padding-right: 10px;
+        gap: 24px;
+    }
+}
+
+.admin__header {
+    button {
+        background: #454545;
+        color: white;
+        font-size: 26px;
+        height: 26px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div {
+        display: flex;
+        gap: 12px;
+
+        svg {
+            font-size: 20px;
+        }
+
+        align-items: center;
+        cursor: pointer;
+    }
+}

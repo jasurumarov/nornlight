@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 // Icons
 import SiteLogo from '../../assets/icons/footer-logo.svg'
@@ -8,6 +8,11 @@ import { FaFacebook, FaTelegram } from 'react-icons/fa'
 import { FaSquareInstagram } from 'react-icons/fa6'
 
 const Footer = () => {
+    let {pathname} = useLocation()
+
+    if (pathname.includes("register") || pathname.includes("admin")) {
+        return <></>
+    }
     return (
         <footer>
             <div className="container">

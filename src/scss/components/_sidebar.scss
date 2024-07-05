@@ -1,0 +1,72 @@
+.sidebar {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: #222;
+    color: #fff;
+    padding: 30px 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__collection {
+        margin-top: 38px;
+    }
+
+    &__item {
+        list-style: none;
+    }
+
+    &__link {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: 14px;
+        padding: 10px 0;
+        color: #fff;
+        text-decoration: none;
+        margin: 6px 0;
+        border-radius: 10px;
+        transition: .3s;
+        text-wrap: nowrap;
+
+        svg {
+            color: #fff;
+            display: flex;
+            align-items: center;
+            font-size: 22px;
+            min-width: 26px;
+        }
+
+    }
+
+    &__logo {
+        margin-top: -10px;
+        font-family: Manrope600;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        span {
+            margin-top: -6px;
+        }
+    }
+
+    &__link.active {
+        background: #fff8;
+        color: #000;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 16px;
+        font-family: Manrope500;
+    }
+
+    span {
+        font-family: Manrope500;
+    }
+
+}

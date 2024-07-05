@@ -1,48 +1,61 @@
-import React, { useEffect, useState } from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import { useGetProductsQuery } from '../../context/api/productsApi'
+import React, { useEffect, useState } from 'react';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useGetProductsQuery } from '../../context/api/productsApi';
 
 // Icons
-import Logo from '../../assets/icons/logo.svg'
-import Heart from '../../assets/icons/heart.svg'
-import Compare from '../../assets/icons/compare.svg'
-import Cart from '../../assets/icons/cart.svg'
-import { RiMenu2Line } from 'react-icons/ri'
-import { FiSearch } from 'react-icons/fi'
-
+import Logo from '../../assets/icons/logo.svg';
+import Heart from '../../assets/icons/heart.svg';
+import Compare from '../../assets/icons/compare.svg';
+import Cart from '../../assets/icons/cart.svg';
+import { RiMenu2Line } from 'react-icons/ri';
+import { FiSearch } from 'react-icons/fi';
+import Model from '../model/Model';
+import { GoArrowRight } from 'react-icons/go';
+import { IoMdClose } from 'react-icons/io';
 
 const Header = () => {
-    const [menu, setMenu] = useState(false)
-    const [shrink, setShrink] = useState(false)
-    const [searchValue, setSearchValue] = useState('')
-    const [filteredData, setFilteredData] = useState(null)
+    const [model, setModel] = useState(false);
+    const [menu, setMenu] = useState(false);
+    const [shrink, setShrink] = useState(false);
+    const [searchValue, setSearchValue] = useState('');
+    const [filteredData, setFilteredData] = useState(null);
 
-    const navigate = useNavigate()
-    let favorites = useSelector(state => state.wishlist.value)
-    let cart = useSelector(state => state.cart.value)
-    const { data } = useGetProductsQuery()
+    let { pathname } = useLocation();
+    const navigate = useNavigate();
+
+    let favorites = useSelector(state => state.wishlist.value);
+    let cart = useSelector(state => state.cart.value);
+    const { data } = useGetProductsQuery();
+
     useEffect(() => {
         if (data && searchValue) {
-            setFilteredData(data.filter(product => product.title.toLowerCase().includes(searchValue.trim().toLowerCase())))
+            setFilteredData(data.filter(product => product.title.toLowerCase().includes(searchValue.trim().toLowerCase())));
         }
-    }, [searchValue])
+    }, [data, searchValue]);
 
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 50) {
-                setShrink(true)
+                setShrink(true);
             } else {
-                setShrink(false)
+                setShrink(false);
             }
-        }
+        };
 
-        window.addEventListener('scroll', handleScroll)
+        window.addEventListener('scroll', handleScroll);
 
         return () => {
-            window.removeEventListener('scroll', handleScroll)
-        }
-    }, [])
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    if (pathname.includes("register") || pathname.includes("admin")) {
+        return null;
+    }
+
+    document.body.style.overflow = model ? 'hidden' : 'auto';
+
     return (
         <header className={`header ${shrink ? 'shrink' : ''}`}>
             <div className="container">
@@ -54,7 +67,7 @@ const Header = () => {
                             <span></span>
                         </button>
                         <ul className={menu ? 'show' : ''}>
-                            <NavLink className='/about-us'>О компании</NavLink>
+                            <NavLink to='/about-us'>О компании</NavLink>
                             <NavLink to={'/shipping'}>Доставка и оплата</NavLink>
                             <NavLink to={'/return'}>Возврат</NavLink>
                             <NavLink to={'/garant'}>Гарантии</NavLink>
@@ -63,7 +76,7 @@ const Header = () => {
                             <div>
                                 <button onClick={() => navigate('/catalog')}><RiMenu2Line /> Каталог</button>
                                 <Link to={'tel: 8 (800) 890-46-56'}>8 (800) 890-46-56</Link>
-                                <p>Заказать звонок</p>
+                                <p onClick={() => setModel(true)}>Заказать звонок</p>
                             </div>
                         </ul>
                         <Link to={'/'}>
@@ -84,7 +97,7 @@ const Header = () => {
                                     }
                                 </ul>
                                 :
-                                <></>
+                                null
                         }
                     </label>
                     <div className='header__btns'>
@@ -104,9 +117,26 @@ const Header = () => {
                         </button>
                     </div>
                 </nav>
+                {
+                    model ?
+                        <Model width={'80%'} close={setModel}>
+                            <div className="zvonok-model">
+                                <h2>Заполните, <br /> и мы перезвоним</h2>
+                                <form>
+                                    <input type="text" placeholder='ФИО' required />
+                                    <input type="tel" placeholder='телефон' required />
+                                    <button>Весь каталог <GoArrowRight /></button>
+                                </form>
+                                <button onClick={() => {
+                                    setModel(false)
+                                }} className='detail__close'><IoMdClose /></button>
+                            </div>
+                        </Model>
+                        : <></>
+                }
             </div>
         </header>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;

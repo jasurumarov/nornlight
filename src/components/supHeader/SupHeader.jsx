@@ -1,5 +1,8 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
+import Model from '../model/Model'
+import { GoArrowRight } from 'react-icons/go'
+import { IoMdClose } from 'react-icons/io'
 
 const linksData = [
     {
@@ -35,6 +38,16 @@ const linksData = [
 ]
 
 const SupHeader = () => {
+    const [model, setModel] = useState(false)
+
+    let { pathname } = useLocation()
+
+    if (pathname.includes("register") || pathname.includes("admin")) {
+        return <></>
+    }
+
+    document.body.style.overflow = model ? 'hidden' : 'auto'
+
     let linkItem = linksData.map(link => (
         <NavLink key={link.id} to={link.link}>{link.title}</NavLink>
     ))
@@ -47,9 +60,26 @@ const SupHeader = () => {
                     </ul>
                     <div>
                         <Link to={'tel: 8 (800) 890-46-56'}>8 (800) 890-46-56</Link>
-                        <button>Заказать звонок</button>
+                        <button onClick={() => setModel(true)}>Заказать звонок</button>
                     </div>
                 </div>
+                {
+                    model ?
+                        <Model maxWidth={'850px'} width={'80%'} close={setModel}>
+                            <div className="zvonok-model">
+                                <h2>Заполните, <br /> и мы перезвоним</h2>
+                                <form>
+                                    <input type="text" placeholder='ФИО' required />
+                                    <input type="tel" placeholder='телефон' required />
+                                    <button>Весь каталог <GoArrowRight /></button>
+                                </form>
+                                <button onClick={() => {
+                                    setModel(false)
+                                }} className='detail__close'><IoMdClose /></button>
+                            </div>
+                        </Model>
+                        : <></>
+                }
             </div>
         </nav>
     )

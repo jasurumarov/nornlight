@@ -1,0 +1,205 @@
+.overlay {
+    width: 100%;
+    height: 100vh;
+    background: #0006;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 11;
+}
+
+.model {
+    width: 60%;
+    max-height: 800px;
+    min-height: 500px;
+    overflow: auto;
+    background: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%) scale(.8);
+    padding: 30px;
+    border-radius: 50px;
+    z-index: 12;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    animation: modal .3s forwards;
+
+    @keyframes modal {
+        to {
+            opacity: 1;
+            scale: 1;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .modelImg {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        div {
+            .modelImg-wrapper {
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                // max-height: 450px;
+                height: 100%;
+
+                img {
+                    max-width: 450px;
+                    max-width: 450px;
+                    object-fit: contain;
+                    height: 550px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .modelImg-btn {
+        height: 44px;
+        width: 140px;
+        border-radius: 100px;
+        color: white;
+        font-family: Manrope500;
+        font-size: 16px;
+        background: #454545;
+        margin-top: 20px;
+
+        &:hover {
+            opacity: .94;
+        }
+    }
+
+    .detail__close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        font-size: 28px;
+        color: #454545;
+        opacity: 0.3;
+        transition: .1s;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .zvonok-model {
+        width: 100%;
+        padding: 34px;
+
+        h2 {
+            font-family: Manrope700;
+            font-size: 64px;
+            line-height: 70.4px;
+            color: #454545;
+            margin-bottom: 50px;
+        }
+
+        form {
+            input {
+                padding: 0 20px;
+                width: 100%;
+                height: 52px;
+                border-radius: 100px;
+                border: 1px solid #454545;
+                margin-bottom: 12px;
+                font-family: Manrope500;
+                font-size: 16px;
+                line-height: 20.8px;
+                color: #454545;
+            }
+
+            button {
+                margin-top: 16px;
+                height: 50px;
+                width: 100%;
+                background: #454545;
+                border-radius: 100px;
+                color: white;
+                font-family: Manrope500;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                transition: .2s;
+
+                &:hover {
+                    opacity: .94;
+                }
+            }
+        }
+
+        @media (max-width: 868px) {
+            h2 {
+                font-size: 36px;
+                line-height: 40px;
+                margin-bottom: 32px;
+            }
+        }
+
+        @media (max-width: 624px) {
+            padding: 0;
+
+            h2 {
+                font-size: 26px;
+                line-height: 28px;
+                margin-bottom: 24px;
+            }
+        }
+        @media (max-width: 480px) {
+
+            h2 {
+                font-size: 24px;
+                line-height: 26px;
+            }
+            form {
+                button {
+                    margin-top: 6px;
+                }
+            }
+        }
+        @media (max-width: 388px) {
+
+            h2 {
+                font-size: 22px;
+                line-height: 24px;
+            }
+        }
+    }
+}
+
+@media (max-width: 914px) {
+    .model {
+        width: 80%;
+        min-height: 1px;
+
+        .modelImg {
+            div {
+                .modelImg-wrapper {
+                    img {
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .model {
+        border-radius: 25px;
+
+        .detail__close {
+            top: 16px;
+            right: 16px;
+        }
+    }
+}

@@ -28,7 +28,7 @@
 
                 .detail__product-images {
                     display: grid;
-                    grid-template-columns: repeat(4, 1fr);
+                    grid-template-columns: repeat(4, 0.5fr);
                     gap: 10px;
 
                     div {

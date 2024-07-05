@@ -150,6 +150,10 @@
 
                 }
 
+                a.active {
+                    opacity: 1;
+                }
+
                 a:nth-child(6) {
                     border-bottom: 2px solid #ECECEC;
                 }
@@ -202,6 +206,7 @@
                         opacity: 0.5;
                         cursor: pointer;
                         transition: .2s;
+                        user-select: none;
 
                         &:hover {
                             opacity: 1;
@@ -442,6 +447,7 @@
                 img {
                     width: 168px;
                 }
+
                 ul {
                     top: 80px;
                 }
