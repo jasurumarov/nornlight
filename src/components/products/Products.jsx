@@ -76,7 +76,7 @@ const Products = ({ data, isLoading, isAdmin }) => {
                         ?
                         <div className='admin-btns'>
                             <button><RiEdit2Line /></button>
-                            <button disabled={isDeleteLoading} onClick={() => deleteProduct(product.id)}><FaRegTrashAlt /></button>
+                            <button disabled={isDeleteLoading && deleteProduct === product.id} onClick={() => deleteProduct(product.id)}><FaRegTrashAlt /></button>
                         </div>
                         :
                         <button onClick={() => dispatch(addToCart(product))}>

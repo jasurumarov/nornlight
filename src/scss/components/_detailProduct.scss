@@ -290,6 +290,16 @@
     }
 }
 
+@media (max-width: 564px) {
+    .detail-section {
+        &__about {
+            h2 {
+                font-size: 30px !important;
+            }
+        }
+    }
+}
+
 @media (max-width: 480px) {
     .detail-section {
         &__content {

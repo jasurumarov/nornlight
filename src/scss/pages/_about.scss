@@ -67,7 +67,6 @@
         .about-section {
             &__content {
                 gap: 32px;
-                // grid-template-columns: repeat(1, 1fr);
             }
         }
     }
@@ -100,7 +99,8 @@
                     div {
                         height: 160px;
                         h3 {
-                            font-size: 28px;
+                            font-size: 36px;
+                            font-family: Manrope600;
                         }
                         p {
                             font-size: 16px;
