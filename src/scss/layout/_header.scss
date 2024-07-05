@@ -135,7 +135,7 @@
                     width: 100%;
                     font-family: Manrope500;
                     font-size: 16px;
-                    opacity: 1;
+                    opacity: 0.5;
                     line-height: 19.12px;
                     padding: 16px 0;
                     border-top: 2px solid #ECECEC;
@@ -192,8 +192,9 @@
                     a {
                         padding: 0;
                         border: 0;
-                        font-family: Manrope;
+                        font-family: Manrope600;
                         font-size: 16px;
+                        opacity: 1;
                         line-height: 19.12px;
                         color: #454545;
                         margin-bottom: 8px;
