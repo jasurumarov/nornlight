@@ -1,11 +1,14 @@
-h3 {
-    margin-top: -20px;
-    font-family: Manrope500;
-    font-size: 28px;
-    line-height: 30.8px;
-    color: #454545;
-    margin-bottom: 32px;
+.admin {
+    h3 {
+        margin-top: -20px;
+        font-family: Manrope500;
+        font-size: 28px;
+        line-height: 30.8px;
+        color: #454545;
+        margin-bottom: 32px;
+    }
 }
+
 
 .create-button {
     margin-top: 8px;
@@ -150,16 +153,23 @@ h3 {
                 width: 55px !important;
                 height: 33px !important;
                 font-size: 19px;
+
+                &:disabled {
+                    opacity: .7;
+                    scale: 1;
+                }
             }
 
             button:first-child {
                 background: white;
                 font-size: 22px;
                 border: 1px solid #454545;
+
                 svg {
                     color: #454545;
                 }
             }
+
             button:last-child {
                 color: white;
             }

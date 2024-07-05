@@ -28,7 +28,7 @@ const Products = ({ data, isLoading, isAdmin }) => {
     const [visibleProducts, setVisibleProducts] = useState(8);
     const [model, setModel] = useState(false)
     const [modelData, setModelData] = useState(null)
-    // const [deleteProduct, { isLoading }] = useDeleteProductMutation()
+    const [deleteProduct, { isLoading: isDeleteLoading }] = useDeleteProductMutation()
 
     document.body.style.overflow = model ? 'hidden' : 'auto'
 
@@ -76,7 +76,7 @@ const Products = ({ data, isLoading, isAdmin }) => {
                         ?
                         <div className='admin-btns'>
                             <button><RiEdit2Line /></button>
-                            <button ><FaRegTrashAlt /></button>
+                            <button disabled={isDeleteLoading} onClick={() => deleteProduct(product.id)}><FaRegTrashAlt /></button>
                         </div>
                         :
                         <button onClick={() => dispatch(addToCart(product))}>
