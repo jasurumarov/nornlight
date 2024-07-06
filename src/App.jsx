@@ -28,6 +28,7 @@ import Header from "./components/header/Header"
 import SearchInput from "./components/searchInput/SearchInput"
 import Footer from "./components/footer/Footer"
 import NotFound from "./components/notFound/NotFound"
+import Backtop from "./components/backtop/Backtop"
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -35,6 +36,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <>
+      <Backtop />
       <SupHeader />
       <Header />
       <SearchInput />
