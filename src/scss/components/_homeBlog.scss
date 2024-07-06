@@ -57,6 +57,12 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
 
+        .swiper-pagination-bullet {
+            width: 10px !important;
+            height: 10px !important;
+            background: #454545 !important;
+        }
+
         .homeBlog__card {
             padding-bottom: 60px;
 

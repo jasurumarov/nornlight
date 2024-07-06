@@ -6,8 +6,8 @@
     justify-content: space-between;
 
     h2 {
-        font-family: Manrope500;
-        font-size: 40px;
+        font-family: Manrope600;
+        font-size: 42px;
         color: $colorBlack;
         margin-top: -6px;
         user-select: none;
@@ -95,7 +95,7 @@
 @media (max-width: 564px) {
     .section__title {
         h2 {
-            font-size: 26px !important;
+            font-size: 32px !important;
             font-family: Manrope600;
             margin-top: 0;
         }
@@ -107,5 +107,8 @@
 
     .section__title-btn {
         display: flex;
+        button {
+            width: 100%;
+        }
     }
 }

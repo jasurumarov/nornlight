@@ -139,7 +139,7 @@
 
         .products__card {
             max-width: 260px;
-
+            
             .products__card-img {
                 max-width: 260px;
                 height: 260px;
@@ -168,6 +168,7 @@
             }
 
             h3 {
+                height: 44px;
                 font-family: Manrope500;
                 font-size: 18px;
                 line-height: 22px;
@@ -262,15 +263,16 @@
 @media (max-width: 524px) {
     .products-section {
         .products__see-more {
-            margin-top: 24px;
+            margin-top: 34px;
         }
         &__content {
             grid-template-columns: repeat(2, 1fr);
 
             .products__card {
                 .products__card-img {
-                    svg {
-                        display: none;
+                    height: 200px;
+                    img {
+                        height: 160px;
                     }
                 }
             }

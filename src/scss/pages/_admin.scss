@@ -176,3 +176,106 @@
         }
     }
 }
+
+.manage-category {
+    ul {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #454545;
+        border-radius: 10px;
+
+        li {
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #454545;
+
+            h4 {
+                text-transform: capitalize;
+                font-size: 20px;
+                font-family: Manrope600;
+                font-weight: 400;
+            }
+
+            div {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+
+                button {
+                    height: 44px;
+                    width: 60px;
+                    border: 1px solid #454545;
+                    background: #454545;
+                    border-radius: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: .2s;
+
+                    svg {
+                        font-size: 20px;
+                        color: white;
+                    }
+
+                    &:hover {
+                        opacity: .94;
+                    }
+
+                    &:active {
+                        scale: .97;
+                    }
+
+                    &:disabled {
+                        opacity: .8;
+                        scale: 1;
+                    }
+                }
+
+                button:first-child {
+                    background: white;
+
+                    svg {
+                        font-size: 22px;
+                        color: #454545;
+                    }
+                }
+            }
+        }
+
+        li:first-child {
+            border-top: 0;
+        }
+    }
+
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            label {
+                font-size: 16px;
+                line-height: 25.6px;
+                color: #454545;
+            }
+
+            input {
+                width: 100%;
+                padding: 0 16px;
+                height: 58px;
+                border-radius: 10px;
+                background: #F8F8F8;
+                font-size: 16px;
+                color: #454545;
+                font-family: Manrope500;
+            }
+        }
+    }
+}

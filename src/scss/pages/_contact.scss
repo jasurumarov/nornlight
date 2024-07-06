@@ -141,6 +141,7 @@
         }
     }
 }
+
 @media (max-width: 904px) {
     .contact-page {
         .contact-section {
@@ -180,6 +181,18 @@
                     p {
                         font-size: 16px;
                     }
+                }
+            }
+
+            &__map {
+                margin-top: 24px;
+                height: 300px !important;
+            }
+            &__map-content {
+                padding: 6px;
+                padding-top: 36px;
+                button {
+                    width: 100%;
                 }
             }
         }

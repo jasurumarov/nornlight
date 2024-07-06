@@ -11,6 +11,7 @@ import DetailProductLoading from './DetailProductLoading'
 import { FaFacebook, FaInstagramSquare, FaLinkedin, FaRegHeart, FaTelegram } from 'react-icons/fa'
 import { toggleHeart } from '../../context/slices/wishlistSlice'
 import { LiaHeart, LiaHeartSolid } from 'react-icons/lia'
+import { addToCart, decrementCart, incrementCart } from '../../context/slices/cartSlice'
 
 const DetailProduct = () => {
     const dispatch = useDispatch()
@@ -20,12 +21,17 @@ const DetailProduct = () => {
 
     const { data, isLoading } = useGetProductByIdQuery(id)
     let favorites = useSelector(state => state.wishlist.value)
+    let cart = useSelector(state => state.cart.value)
 
     useEffect(() => {
         if (data && data.url) {
             setMainImage(data.url[0])
         }
     }, [data])
+    console.log(data);
+
+    const productInCart = cart.find(item => item.id === data?.id);
+    const productQuantity = productInCart ? productInCart.quantity : 0;
 
     let productItem = (
         <div className='detail__product'>
@@ -68,16 +74,19 @@ const DetailProduct = () => {
                 </div>
                 <div className="detail__product-title__prices">
                     <h3>{data?.price}₽</h3>
-                    <del>522 000₽</del>
+                    <del>{data?.oldprice}₽</del>
                 </div>
                 <p className="detail__product-title__desc">{data?.desc}</p>
                 <div className="detail__product-title__btns">
-                    <div>
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                    <button className='detail__product-title__btns-cart'>корзину</button>
+                    {productQuantity > 0 ? (
+                        <div>
+                            <button onClick={() => dispatch(decrementCart(data))}>-</button>
+                            <span>{productQuantity}</span>
+                            <button onClick={() => dispatch(incrementCart(data))}>+</button>
+                        </div>
+                    ) : (
+                        <button onClick={() => dispatch(addToCart(data))} className='detail__product-title__btns-cart'>корзину</button>
+                    )}
                     <button onClick={() => dispatch(toggleHeart(data))} className='detail__product-title__btns-heart'>
                         {
                             favorites?.some(item => item.id === data?.id)
