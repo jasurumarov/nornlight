@@ -139,7 +139,15 @@
 
         .products__card {
             max-width: 260px;
-            
+
+            &:hover {
+                .products__card-img {
+                    img {
+                        scale: 1.03;
+                    }
+                }
+            }
+
             .products__card-img {
                 max-width: 260px;
                 height: 260px;
@@ -147,8 +155,10 @@
                 display: flex;
                 justify-content: center;
                 position: relative;
-
+                cursor: pointer;
+                
                 img {
+                    transition: .2s;
                     margin-top: 11px;
                     max-width: 230px;
                     width: 100%;
@@ -265,12 +275,14 @@
         .products__see-more {
             margin-top: 34px;
         }
+
         &__content {
             grid-template-columns: repeat(2, 1fr);
 
             .products__card {
                 .products__card-img {
                     height: 200px;
+
                     img {
                         height: 160px;
                     }

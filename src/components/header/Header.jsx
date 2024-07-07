@@ -92,7 +92,10 @@ const Header = () => {
                                 <ul className='search__value'>
                                     {
                                         filteredData?.slice(0, 5)?.map(el => (
-                                            <li onClick={() => navigate(`/products/${el.id}`)} key={el.id}><img src={el.url[0]} alt={el.title} /> <p>{el.title}</p></li>
+                                            <li onClick={() => {
+                                                navigate(`/products/${el.id}`)
+                                                setSearchValue('')
+                                            }} key={el.id}><img src={el.url[0]} alt={el.title} /> <p>{el.title}</p></li>
                                         ))
                                     }
                                 </ul>
